@@ -1,0 +1,30 @@
+﻿<Page x:Class="FinalTourplanner.View.TourlogWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FinalTourplanner.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TourlogWindow">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <local:navbar Grid.Row="0"/>
+            <ComboBox x:Name="choosentour" ItemsSource="{Binding TourNames}" SelectedItem="{Binding SelectedItem}" Grid.Row="1"/>
+            <Button Command="{Binding AddLogs}" Content="Add Tour Logs" Grid.Row="2"/>
+            <local:TourlogOutput x:Name="logOutput" Grid.Row="3"/>
+            <TextBlock Grid.Row="4">When you want to delete/update a log press on the row you want to delete/update and then press the button delete or update</TextBlock>
+            <Button Command="{Binding RemoveLogs}" Content="Delete choosen tour log" Grid.Row="5"/>
+            <Button Command="{Binding ChangeLog}" Content="Change choosen tour log" Grid.Row="6"/>
+        </Grid>
+    </ScrollViewer>
+</Page>

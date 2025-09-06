@@ -53,11 +53,11 @@ namespace FinalTourplanner.ViewModel
             if (File.Exists(jsonPath))
             {
                 var info = new FileInfo(jsonPath);
-                MessageBox.Show($"Direction.js zuletzt geändert: {info.LastWriteTime}");
+                //MessageBox.Show($"Direction.js zuletzt geändert: {info.LastWriteTime}");
             }
             else
             {
-                MessageBox.Show("Direction.js existiert nicht!");
+                //MessageBox.Show("Direction.js existiert nicht!");
             }
             MapUri = new Uri(MapUri.GetLeftPart(UriPartial.Path) + "?v=" + DateTime.Now.Ticks);
         }

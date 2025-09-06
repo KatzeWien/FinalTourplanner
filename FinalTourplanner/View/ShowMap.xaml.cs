@@ -27,7 +27,7 @@ namespace FinalTourplanner.View
             {
                 await mapView.EnsureCoreWebView2Async(null);
                 await mapView.ExecuteScriptAsync("map.invalidateSize();");
-                mapView.CoreWebView2.OpenDevToolsWindow();
+                //mapView.CoreWebView2.OpenDevToolsWindow();
             };
         }
     }

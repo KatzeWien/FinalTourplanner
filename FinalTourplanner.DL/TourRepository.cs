@@ -44,5 +44,18 @@ namespace FinalTourplanner.DL
                 context.SaveChanges();
             }
         }
+
+        public Tour GetSpecificTour(string name)
+        {
+            Tour entry = this.context.Tour.Find(name);
+            if (entry != null)
+            {
+                return entry;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

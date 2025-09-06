@@ -177,5 +177,16 @@ namespace FinalTourplanner.ViewModel
                 });
             }
         }
+        public ICommand CreateReport
+        {
+            get
+            {
+                return new Command(obj =>
+                {
+                    ReportService reportService = new ReportService();
+                    reportService.CreateTourReport(oldName);
+                });
+            }
+        }
     }
 }

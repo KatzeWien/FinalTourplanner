@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalTourplanner.DL", "Fina
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalTourplanner.BL", "FinalTourplanner.BL\FinalTourplanner.BL.csproj", "{DBED3404-2B23-4337-B244-55522DF06076}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalTourplanner.Logging", "FinalTourplanner.Logging\FinalTourplanner.Logging.csproj", "{15112CEB-DD34-4F52-BF7F-103ACFC6D11B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DBED3404-2B23-4337-B244-55522DF06076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBED3404-2B23-4337-B244-55522DF06076}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBED3404-2B23-4337-B244-55522DF06076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15112CEB-DD34-4F52-BF7F-103ACFC6D11B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15112CEB-DD34-4F52-BF7F-103ACFC6D11B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15112CEB-DD34-4F52-BF7F-103ACFC6D11B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15112CEB-DD34-4F52-BF7F-103ACFC6D11B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

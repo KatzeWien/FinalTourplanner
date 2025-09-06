@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FinalTourplanner.Logging\FinalTourplanner.Logging.csproj" />
     <ProjectReference Include="..\FinalTourplanner.Models\FinalTourplanner.Models.csproj" />
   </ItemGroup>
 

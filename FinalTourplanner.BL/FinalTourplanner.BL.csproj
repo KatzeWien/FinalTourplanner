@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FinalTourplanner.DL\FinalTourplanner.DL.csproj" />
+    <ProjectReference Include="..\FinalTourplanner.Logging\FinalTourplanner.Logging.csproj" />
     <ProjectReference Include="..\FinalTourplanner.Models\FinalTourplanner.Models.csproj" />
   </ItemGroup>
 

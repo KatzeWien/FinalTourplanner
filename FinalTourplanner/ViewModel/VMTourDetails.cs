@@ -10,6 +10,7 @@ using FinalTourplanner.Models;
 using FinalTourplanner.Commands;
 using FinalTourplanner.BL;
 using System.Windows.Navigation;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 
 namespace FinalTourplanner.ViewModel
 {
@@ -18,6 +19,7 @@ namespace FinalTourplanner.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler SaveSucceeded;
         public AllDataManagement DataManagement { get; }
+        public VMShowMap VMShowMap { get; }
         public Tour Tour { get; }
         private string nameInput;
         private string descriptionInput;
@@ -93,6 +95,7 @@ namespace FinalTourplanner.ViewModel
         public VMTourDetails(AllDataManagement dataManagement, Tour tour)
         {
             this.DataManagement = dataManagement;
+            this.VMShowMap = new VMShowMap();
             this.Tour = tour;
             this.NameInput = Tour.Name;
             this.DescriptionInput = Tour.Description;
@@ -102,6 +105,14 @@ namespace FinalTourplanner.ViewModel
             this.TourDistanceInput = Tour.Distance.ToString();
             this.EstimatedTimeInput = Tour.EstimatedTime.ToString();
             this.oldName = Tour.Name;
+            _ = LoadMap();
+        }
+        private async Task LoadMap()
+        {
+            if (FromInput != null && ToInput != null)
+            {
+                await VMShowMap.LoadRoute(FromInput, ToInput);
+            }
         }
         private void OnPropertyChanged(string propertyName)
         {

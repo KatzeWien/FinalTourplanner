@@ -19,10 +19,10 @@ namespace FinalTourplanner.ViewModel
         public ObservableCollection<TourLog> SpecialLogs { get; set; } = new ObservableCollection<TourLog>();
         public AllDataManagement()
         {
-            /*Tour tour = new Tour("name2", "desc", "from", "to", "bim", 5, new TimeSpan(12, 00, 00));
-            AddTour(tour);
+            Tour tour = new Tour("name2", "desc", "from", "to", "bim", 5, new TimeSpan(12, 00, 00));
+            //AddTour(tour);
             TourLog tourLog = new TourLog("name2", new DateTime(2024, 10, 27, 12, 00, 00, DateTimeKind.Utc), "comment", "easy", 2, new TimeSpan(10, 00, 00), "it was easy");
-            AddTourLog(tourLog);*/
+            //AddTourLog(tourLog);
             GetAllTourNames();
             GetAllTourLogs();
         }

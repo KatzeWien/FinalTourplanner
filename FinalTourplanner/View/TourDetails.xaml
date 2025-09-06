@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalTourplanner.View"
+        xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
         Title="TourDetails" Height="450" Width="800">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -32,11 +33,12 @@
         <TextBox x:Name="transporttype" Grid.Row="4" Grid.Column="0" Text="{Binding TransportTypeInput, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         <TextBox x:Name="tourdistance" Grid.Row="5" Grid.Column="0" Text="{Binding TourDistanceInput, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         <TextBox x:Name="estimatedtime" Grid.Row="6" Grid.Column="0" Text="{Binding EstimatedTimeInput, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <Image Source="https://lh3.googleusercontent.com/T1GrZUsdVEeZhUu9cCHivhEBh536MDTvFsJi_0ZDdjpBeRjt3YX-EmMqG4x_Ms4L2rBxKEUilGx5Lu_0c5i4rNDwvqzs9MJdTG6Cs1I=w1533" 
-               Grid.Row="7" Grid.Column="0"/>
-        <Button Grid.Row ="8" Command="{Binding DeleteTour}">Delete this tour</Button>
-        <Button Grid.Row ="9" Click="ButtonCloseWindow_Click">Close this window</Button>
-        <Button Grid.Row ="10" Command="{Binding ChangeTour}">Change Data</Button>
-    </Grid>
+        <!--<Image Source="https://lh3.googleusercontent.com/T1GrZUsdVEeZhUu9cCHivhEBh536MDTvFsJi_0ZDdjpBeRjt3YX-EmMqG4x_Ms4L2rBxKEUilGx5Lu_0c5i4rNDwvqzs9MJdTG6Cs1I=w1533" 
+               Grid.Row="7" Grid.Column="0"/>-->
+        <Button Grid.Row ="7" Command="{Binding DeleteTour}">Delete this tour</Button>
+        <Button Grid.Row ="8" Click="ButtonCloseWindow_Click">Close this window</Button>
+        <Button Grid.Row ="9" Command="{Binding ChangeTour}">Change Data</Button>
+        <local:ShowMap DataContext="{Binding VMShowMap}" Grid.Row="10"/>
+        </Grid>
     </ScrollViewer>
 </Window>

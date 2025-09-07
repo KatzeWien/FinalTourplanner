@@ -17,6 +17,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <local:navbar Grid.Row="0"/>
             <ComboBox x:Name="choosentour" ItemsSource="{Binding TourNames}" SelectedItem="{Binding SelectedItem}" Grid.Row="1"/>
@@ -25,6 +26,7 @@
             <TextBlock Grid.Row="4">When you want to delete/update a log press on the row you want to delete/update and then press the button delete or update</TextBlock>
             <Button Command="{Binding RemoveLogs}" Content="Delete choosen tour log" Grid.Row="5"/>
             <Button Command="{Binding ChangeLog}" Content="Change choosen tour log" Grid.Row="6"/>
+            <Button Command="{Binding CreateReport}" Content="Create Summarize Report of choosen tour" Grid.Row="7"/>
         </Grid>
     </ScrollViewer>
 </Page>

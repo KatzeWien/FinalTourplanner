@@ -94,5 +94,20 @@ namespace FinalTourplanner.ViewModel
                 });
             }
         }
+
+        public ICommand CreateReport
+        {
+            get
+            {
+                return new Command(obj =>
+                {
+                    if (SelectedItem != null)
+                    {
+                        ReportService reportService = new ReportService();
+                        reportService.CreateSummarizeReport(SelectedItem);
+                    }
+                });
+            }
+        }
     }
 }

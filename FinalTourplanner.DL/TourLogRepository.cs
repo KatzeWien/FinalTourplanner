@@ -50,5 +50,10 @@ namespace FinalTourplanner.DL
                 context.SaveChanges();
             }
         }
+
+        public List<TourLog> GetSpecificTourLogs(string tourName)
+        {
+            return context.TourLog.Where(p => p.NameOfTour == tourName).ToList();
+        }
     }
 }

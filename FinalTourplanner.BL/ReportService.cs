@@ -28,9 +28,14 @@ namespace FinalTourplanner.BL
         public void CreateTourReport(string tourName, string imagePath)
         {
             Tour tour = tourepo.GetSpecificTour(tourName);
+            List<TourLog> tourLogs = tourLogRepo.GetSpecificTourLogs(tourName);
             if (tour == null)
             {
                 throw new ArgumentNullException($"tour {tourName} not found");
+            }
+            else if(tourLogs == null)
+            {
+                throw new ArgumentNullException($"tourlogs for {tourName} not found");
             }
             else
             {
@@ -49,6 +54,37 @@ namespace FinalTourplanner.BL
                             col.Item().Text($"Distance: {tour.Distance}");
                             col.Item().Text($"Estimated Time: {tour.EstimatedTime}");
                             col.Item().Image(imagePath).FitWidth();
+                            col.Item().Text("associated tour logs:");
+                            col.Item().Table(table =>
+                            {
+                                table.ColumnsDefinition(columns =>
+                                {
+                                    columns.RelativeColumn();
+                                    columns.RelativeColumn();
+                                    columns.RelativeColumn();
+                                    columns.RelativeColumn();
+                                    columns.RelativeColumn();
+                                    columns.RelativeColumn();
+                                });
+                                table.Header(header =>
+                                {
+                                    header.Cell().Text("Date");
+                                    header.Cell().Text("Comment");
+                                    header.Cell().Text("Difficulty");
+                                    header.Cell().Text("Distance");
+                                    header.Cell().Text("Total Time");
+                                    header.Cell().Text("Rating");
+                                });
+                                foreach (var log in tourLogs)
+                                {
+                                    table.Cell().Text(log.DateInput.ToString("dd.MM.yyyy"));
+                                    table.Cell().Text(log.Comment);
+                                    table.Cell().Text(log.Difficulty);
+                                    table.Cell().Text(log.Distance.ToString());
+                                    table.Cell().Text(log.TotalTime.ToString(@"hh\:mm"));
+                                    table.Cell().Text(log.Rating);
+                                }
+                            });
                         });
                     });
                 });

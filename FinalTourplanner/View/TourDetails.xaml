@@ -38,7 +38,7 @@
         <Button Grid.Row ="8" Click="ButtonCloseWindow_Click">Close this window</Button>
         <Button Grid.Row ="9" Command="{Binding ChangeTour}">Change Data</Button>
         <Button Grid.Row ="10" Command="{Binding CreateReport}">Create Report</Button>
-        <local:ShowMap DataContext="{Binding VMShowMap}" Grid.Row="11" Height="300"/>
+        <local:ShowMap DataContext="{Binding VMShowMap}" Grid.Row="11" Height="300" x:Name="Tourmap"/>
         </Grid>
     </ScrollViewer>
 </Window>

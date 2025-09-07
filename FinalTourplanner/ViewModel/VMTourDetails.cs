@@ -11,6 +11,9 @@ using FinalTourplanner.Commands;
 using FinalTourplanner.BL;
 using System.Windows.Navigation;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using System.IO;
+using Microsoft.Web.WebView2.Wpf;
+using Microsoft.Web.WebView2.Core;
 
 namespace FinalTourplanner.ViewModel
 {
@@ -29,6 +32,12 @@ namespace FinalTourplanner.ViewModel
         private string tourDistanceInput;
         private string estimatedTimeInput;
         private string oldName;
+        private WebView2 webView;
+
+        public void SetWebView(WebView2 webView)
+        {
+            this.webView = webView;
+        }
         public string NameInput
         {
             get => nameInput;
@@ -181,10 +190,17 @@ namespace FinalTourplanner.ViewModel
         {
             get
             {
-                return new Command(obj =>
+                return new Command(async obj =>
                 {
+                    var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                    var solutionDir = Directory.GetParent(baseDir)!.Parent!.Parent!.Parent!.FullName;
+                    var imageFolder = Path.Combine(solutionDir, "Images");
+                    var imagePath = Path.Combine(imageFolder, "map.png");
+                    Directory.CreateDirectory(imageFolder);
+                    using var stream = new FileStream(imagePath, FileMode.Create, FileAccess.Write);
+                    await webView.CoreWebView2.CapturePreviewAsync(CoreWebView2CapturePreviewImageFormat.Png, stream);
                     ReportService reportService = new ReportService();
-                    reportService.CreateTourReport(oldName);
+                    reportService.CreateTourReport(oldName, imagePath);
                 });
             }
         }

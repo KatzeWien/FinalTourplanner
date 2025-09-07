@@ -23,7 +23,7 @@ namespace FinalTourplanner.BL
             this.reportFolder = Path.Combine(solutionDir, "Reports");
             Directory.CreateDirectory(reportFolder);
         }
-        public void CreateTourReport(string tourName)
+        public void CreateTourReport(string tourName, string imagePath)
         {
             Tour tour = tourepo.GetSpecificTour(tourName);
             if (tour == null)
@@ -46,6 +46,7 @@ namespace FinalTourplanner.BL
                             col.Item().Text($"Transport Type: {tour.TransportType}");
                             col.Item().Text($"Distance: {tour.Distance}");
                             col.Item().Text($"Estimated Time: {tour.EstimatedTime}");
+                            col.Item().Image(imagePath).FitWidth();
                         });
                     });
                 });

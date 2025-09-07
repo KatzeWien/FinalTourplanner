@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Web.WebView2.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,5 +31,6 @@ namespace FinalTourplanner.View
                 //mapView.CoreWebView2.OpenDevToolsWindow();
             };
         }
+        public WebView2 MyWebView => mapView;
     }
 }

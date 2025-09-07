@@ -33,6 +33,8 @@ namespace FinalTourplanner.View
                 this.Close();
             };
             this.DataContext = viewModel;
+            var webView = Tourmap.MyWebView;
+            viewModel.SetWebView(webView);
         }
 
         public void ButtonCloseWindow_Click(object sender, RoutedEventArgs e)

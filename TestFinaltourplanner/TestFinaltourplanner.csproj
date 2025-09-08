@@ -8,6 +8,7 @@
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
 	<OutputType>Library</OutputType>
+	<UserSecretsId>793dc66d-9fd1-4f1f-b2b3-4a9517aba4f4</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

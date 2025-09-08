@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FinalTourplanner.BL.ImportExportService">
+    <Position X="5.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAIAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ImportExportService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalTourplanner.BL.ReportService">
+    <Position X="9.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAIAAAAAAAEAAAAAAAAAAIAACAAAAAAA=</HashCode>
+      <FileName>ReportService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalTourplanner.BL.TourLogService">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAABAAAIAAAAAAAAAAAAAAAAAICAAAAAAAAA=</HashCode>
+      <FileName>TourLogService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalTourplanner.BL.TourService">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAIEAAAAABAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>TourService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

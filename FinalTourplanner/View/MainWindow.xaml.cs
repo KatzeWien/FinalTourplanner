@@ -23,6 +23,11 @@ namespace FinalTourplanner
             InitializeComponent();
             AllDataManagement = new AllDataManagement();
             MainFrame.DataContext = AllDataManagement;
+
+
+            //für suche
+
+            searchbar.Init(AllDataManagement);
         }
     }
 }

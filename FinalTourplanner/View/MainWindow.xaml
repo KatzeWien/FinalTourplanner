@@ -15,7 +15,14 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+
             <local:navbar x:Name="navbar" Grid.Row="0"/>
+
+            <local:SearchTours x:Name="searchbar" Grid.Row="1"/>
+
+
+
+
             <!--<local:searchbar x:Name="searchbar" Grid.Row="1"/>
     <local:tourconfig x:Name="tourconfig" Grid.Row="2"/>
     <local:ListOfTours x:Name="listOfTours" Grid.Row="3"/>

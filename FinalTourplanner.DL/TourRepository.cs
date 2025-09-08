@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FinalTourplanner.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalTourplanner.DL
 {
@@ -23,7 +24,7 @@ namespace FinalTourplanner.DL
         public void DeleteTour(string name)
         {
             var entry = this.context.Tour.Find(name);
-            if(entry != null)
+            if (entry != null)
             {
                 context.Tour.Remove(entry);
                 context.SaveChanges();
@@ -57,5 +58,24 @@ namespace FinalTourplanner.DL
                 return null;
             }
         }
+
+
+        //case insensitive suche mit Ilike
+        public List<Tour> GetToursByName(string? text)
+        {
+            IQueryable<Tour> q = context.Tour.AsNoTracking();
+
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                var pattern = $"%{text.Trim()}%";
+                q = q.Where(t => EF.Functions.ILike(t.Name, pattern));
+            }
+
+
+            return q.OrderBy(t => t.Name)
+                    .Take(200)
+                    .ToList();
+        }
+
     }
 }

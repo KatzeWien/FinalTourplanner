@@ -37,5 +37,15 @@ namespace FinalTourplanner.BL
             ObservableCollection<Tour> tours = new ObservableCollection<Tour>(this.tourepo.GetAllTours());
             return tours;
         }
+
+
+        //für searchbar
+        public ObservableCollection<Tour> SearchByName(string? text)
+        {
+            var list = this.tourepo.GetToursByName(text) ?? Enumerable.Empty<Tour>();
+            return new ObservableCollection<Tour>(list);
+        }
+
+
     }
 }

@@ -12,11 +12,15 @@ namespace FinalTourplanner.ViewModel
 {
     public class AllDataManagement
     {
-        
+
         public ObservableCollection<Tour> Tours { get; set; } = new ObservableCollection<Tour>();
         public ObservableCollection<TourLog> Logs { get; set; } = new ObservableCollection<TourLog>();
         public ObservableCollection<string> TourNames { get; set; } = new ObservableCollection<string>();
         public ObservableCollection<TourLog> SpecialLogs { get; set; } = new ObservableCollection<TourLog>();
+
+        //für Suche 
+        public ObservableCollection<Tour> SearchResults { get; set; } = new ObservableCollection<Tour>();
+
         public AllDataManagement()
         {
             Tour tour = new Tour("name2", "desc", "from", "to", "bim", 5, new TimeSpan(12, 00, 00));
@@ -94,5 +98,19 @@ namespace FinalTourplanner.ViewModel
             TourLogService tourLogService = new TourLogService();
             tourLogService.DeleteTourLog(tourLog);
         }
+
+
+
+        //Searchbar
+        public void SearchToursByName(string? text)
+        {
+            var service = new TourService();
+            var results = service.SearchByName(text);
+
+            SearchResults.Clear();
+            foreach (var t in results)
+                SearchResults.Add(t);
+        }
+
     }
 }

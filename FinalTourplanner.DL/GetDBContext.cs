@@ -10,13 +10,13 @@ namespace FinalTourplanner.DL
 {
     public class GetDBContext
     {
-        public static MyDBContext GetConnection()
+        public static MyDBContext GetConnection(string DbString)
         {
             var config = new ConfigurationBuilder()
                 .SetBasePath(AppContext.BaseDirectory)
                 .AddJsonFile("appsettings.json", optional: false)
                 .Build();
-            var connection = config.GetConnectionString("MyDbString");
+            var connection = config.GetConnectionString(DbString);
             var options = new DbContextOptionsBuilder<MyDBContext>()
                 .UseNpgsql(connection)
                 .Options;

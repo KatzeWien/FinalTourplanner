@@ -12,7 +12,11 @@ namespace FinalTourplanner.DL
         private readonly MyDBContext context;
         public TourLogRepository()
         {
-            this.context = GetDBContext.GetConnection();
+            this.context = GetDBContext.GetConnection("MyDbString");
+        }
+        public TourLogRepository(MyDBContext testContext)
+        {
+            this.context = testContext;
         }
         public void AddTourLog(TourLog tourLog)
         {

@@ -48,5 +48,14 @@ namespace FinalTourplanner.View
             //tourlogWindow.DataContext = mainWindow.MainFrame.DataContext;
             mainWindow?.MainFrame.Navigate(tourlogWindow);
         }
+
+        private void SwitchToSearchPage(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            var dataManagement = mainWindow.MainFrame.DataContext as AllDataManagement;
+            var searchPage = new SearchPage(dataManagement);
+            //tourlogWindow.DataContext = mainWindow.MainFrame.DataContext;
+            mainWindow?.MainFrame.Navigate(searchPage);
+        }
     }
 }

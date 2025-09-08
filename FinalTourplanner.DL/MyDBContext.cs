@@ -10,8 +10,11 @@ namespace FinalTourplanner.DL
 {
     public class MyDBContext : DbContext 
     {
-        public DbSet<Tour> Tour => Set<Tour>();
-        public DbSet<TourLog> TourLog => Set<TourLog>();
+        //public DbSet<Tour> Tour => Set<Tour>();
+        public virtual DbSet<Tour> Tour { get; set; }
+        //public DbSet<TourLog> TourLog => Set<TourLog>();
+        public virtual DbSet<TourLog> TourLog { get; set; }
+
 
         public MyDBContext(DbContextOptions<MyDBContext> options) : base(options) { }
 
